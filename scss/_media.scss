@@ -1,0 +1,211 @@
+// XTRALARGE WIDESCREENS
+@include above1170 {
+  body {
+    p {
+      // margin-top: 3rem;
+    }
+  }
+  main {
+    &#home {
+
+      h1 {
+          margin-top: 5vh;
+      }
+  }
+  }
+  .container {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    padding-right: 10%
+    // background-color: rgba($primary-color, $background-opacity);
+  }
+  .menu-btn {    
+    right: 15%;   
+  }
+  .menu {   
+
+    &-branding, &-nav {
+      width: 40%; /*mal zwei mach 80%, also 10% breiter als die 70% aus .container*/
+      position: relative;
+      left:-5%; /*daher wieder -5%*/
+      //background-color:yellow;
+    }    
+  }
+
+  .keep-text-left {
+    width: 80%;
+  }
+
+}
+
+
+//LARGE
+@include between769And1170 {
+  body {
+    p {
+      margin-top: 2rem;
+    }
+  }
+
+  main {    
+    &#home {
+
+      h1 {
+          margin-top: 1vh;
+      }
+    }
+  }
+
+  .container {
+    padding: 2rem;    
+    width: 80%;
+    margin: 0 auto;
+   
+  }
+
+  .menu-btn {    
+    right: 15%;   
+  }
+
+  /*Functionier nicht richtig. Menü und .container alignen nicht*/
+  .menu {
+    &-branding, &-nav {
+      width: 40%;
+      position: relative;
+      left:-2.5%; 
+      //background-color:green;    
+    }    
+  }
+
+  .keep-text-left {
+    width: 80%;
+  }
+}
+
+//MEDIUM
+@include under768 {
+  body {     
+    font-size: 1rem;
+    line-height: 1.5;
+    p {
+      margin-top: 1rem;
+    }   
+  }  
+
+  main {
+    
+    &#home {
+
+      h1 {
+          margin-top: 1vh;
+      }
+    }
+  }
+
+  .container {
+    padding: 0 3rem;
+  }
+
+
+  .menu {
+    &-branding, &-nav {
+      width: 50%;
+      position: relative;
+      left:0;   
+      //background-color:red;  
+    }    
+  }
+
+
+  //Handy quer braucht kleineres Bild und Schrift
+  .menu {    
+    .portrait {
+      width: 50vh;
+      height: 50vh;
+      background-size: 50vh;    
+    }
+  }
+
+  .menu-nav {    
+    .nav-link {
+      font-size: 1.5rem;
+    }
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px; 
+  }
+
+  h1, h2, h3 {
+    margin: 0;
+    font-weight: normal;
+
+    &.lg-heading {
+        font-size: 3rem;        }
+
+    &.sm-heading {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+
+    }
+  }
+
+}
+
+
+
+//SMARTPHONES
+@include under500 {
+  body {
+    p {
+      margin-top: 1rem;
+    }
+  }
+
+  // main, footer {
+  //   padding: 2rem;
+  // }
+
+  .container {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  
+
+  //Bei Handy Aufrecht kommt das overlay von rechts und links statt oben / unten
+  .menu {    
+    .portrait {
+      width: 20vh;
+      height: 20vh;
+      background-size: 20vh;    
+    }
+  }
+
+  ul.menu-nav, div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.open {
+      transform: translate3d(0,0,0);
+    }
+  }
+
+  .menu-nav {
+    height: 60vh;
+    transform: translate3d(100%,0,0);
+    
+    .nav-link {
+      font-size: 1.5rem;
+      padding: 0.7rem;
+    }
+  }
+
+  .menu-branding {
+    height: 40vh;
+    transform: translate3d(-100%,0,0);
+  } 
+}

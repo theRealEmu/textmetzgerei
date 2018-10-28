@@ -1,0 +1,393 @@
+@charset "UTF-8";
+/*IMPORTSS===============================*/
+/*FONTS===============================*/
+@font-face {
+  font-family: 'Amatic SC';
+  src: url("../webfonts/AmaticSC-Regular.ttf");
+  font-style: 'normal';
+  font-weight: 'normal'; }
+
+@font-face {
+  font-family: 'AmaticSCBold';
+  src: url("../webfonts/AmaticSC-Bold.ttf");
+  font-style: 'normal';
+  font-weight: 'bold'; }
+
+@font-face {
+  font-family: 'Pompiere';
+  src: url("../webfonts/Pompiere-Regular.ttf"); }
+
+@font-face {
+  font-family: 'Cute';
+  src: url("../webfonts/CuteFont-Regular.ttf"); }
+
+@font-face {
+  font-family: 'CormorantRegular';
+  src: url("../webfonts/CormorantGaramond-Regular.ttf");
+  font-style: 'normal';
+  font-weight: 'normal'; }
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url("../webfonts/Inconsolata-Regular.ttf");
+  font-style: 'normal';
+  font-weight: 'normal'; }
+
+@font-face {
+  font-family: 'PoiretOne';
+  src: url("../webfonts/PoiretOne-Regular.ttf");
+  font-style: 'normal';
+  font-weight: 'normal'; }
+
+@font-face {
+  font-family: 'SpecialElite';
+  src: url("../webfonts/SpecialElite-Regular.ttf");
+  font-style: 'normal';
+  font-weight: 'normal'; }
+
+/*END FONTS===============================*/
+/*VARIABLES===============================*/
+/*END VARIABLES===============================*/
+/*MIXINS===============================*/
+/*END MIXINS===============================*/
+.menu-btn {
+  position: fixed;
+  z-index: 3;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #fff;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      display: none; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg); }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden; }
+  .menu.open {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    padding: 0;
+    margin: 0; }
+  .menu-branding {
+    background: #eee;
+    transform: translate3d(0, 100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-branding.open {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      width: 250px;
+      height: 250px;
+      background: url("../img/portrait.jpg");
+      border-radius: 50%;
+      border: solid 4px #989898;
+      background-size: 250px;
+      background-repeat: no-repeat; }
+  .menu-nav {
+    background: #c8c8c8;
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-nav.open {
+      transform: translate3d(0, 0, 0); }
+  .menu .nav-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.5s ease-out; }
+    .menu .nav-item.open {
+      transform: translate3d(0, 0, 0); }
+    .menu .nav-item.current > a {
+      color: #989898; }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    font-weight: 400;
+    color: set-text-color(#eee);
+    text-decoration: none;
+    transition: all 0.5s ease-out; }
+    .menu .nav-link:hover {
+      color: #989898; }
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+ul {
+  margin: 0; }
+
+/*END IMPORTSS===============================*/
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 15px; }
+
+body {
+  margin: 0;
+  color: #eee;
+  font-family: "PoiretOne", "Inconsolata", "Cormorantregular", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5; }
+  body#bg-img {
+    background-image: url("../img/tractor.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  body:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #1a6c84;
+    z-index: -1; }
+
+.pomp {
+  font-family: 'Pompiere', 'Calibri',  'Sergoe UI', cursive; }
+
+.cute {
+  font-family: 'Cute', 'Calibri',  'Sergoe UI', cursive; }
+
+.amatic {
+  font-family: 'Amatic SC', 'Calibri', 'Sergoe UI', sans-serif;
+  font-weight: normal; }
+
+.amaticbold {
+  font-family: 'AmaticSCBold', 'Calibri', 'Sergoe UI', sans-serif;
+  font-weight: normal; }
+
+.poiretone {
+  font-family: 'PioretOne'; }
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: "SpecialElite", "Inconsolata", sans-serif;
+  font-weight: normal; }
+  h1.lg-heading, h2.lg-heading, h3.lg-heading {
+    font-size: 4rem; }
+  h1.sm-heading, h2.sm-heading, h3.sm-heading {
+    font-size: 1.5rem;
+    margin-bottom: 2rem; }
+
+a {
+  color: #eee;
+  text-decoration: none; }
+
+header {
+  z-index: 2; }
+
+main {
+  min-height: 100vh; }
+  main .icons {
+    margin-top: 1rem; }
+    main .icons a {
+      padding: 0.4rem; }
+      main .icons a:hover {
+        color: #989898;
+        transition: all 0.5s ease-out; }
+
+/* Colors ###########*/
+.text-primary {
+  color: #eee; }
+
+.text-secondary {
+  color: #989898; }
+
+.text-font {
+  color: #eee; }
+
+.text-success {
+  color: #61791A; }
+
+.text-info {
+  color: #9C0503; }
+
+/*alignments ###########*/
+.text-right {
+  text-align: right; }
+
+.contactbox {
+  width: 70%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #989898; }
+
+.stuffwedo {
+  padding: 0; }
+  .stuffwedo li {
+    text-decoration: none;
+    list-style-type: none; }
+  .stuffwedo i {
+    margin-right: 20px; }
+
+hr {
+  border-top: 2px dotted #989898;
+  border-bottom: none;
+  display: block;
+  margin-left: 0; }
+
+ul {
+  padding-left: 15px; }
+  ul li {
+    margin-top: 1rem; }
+
+.mt-1 {
+  margin-top: 1rem; }
+
+.mt-2 {
+  margin-top: 2rem; }
+
+.mt-3 {
+  margin-top: 3rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px; }
+
+.footer {
+  padding: 1rem 0rem;
+  font-size: 1.2rem;
+  color: #d5d5d5;
+  letter-spacing: 3px;
+  bottom: 0px; }
+  .footer a {
+    color: #d5d5d5; }
+
+.bg-dark {
+  background-color: #333; }
+
+/*MEDIA QUERIES===============================*/
+@media screen and (min-width: 1171px) {
+  main#home h1 {
+    margin-top: 5vh; }
+  .container {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    padding-right: 10%; }
+  .menu-btn {
+    right: 15%; }
+  .menu-branding, .menu-nav {
+    width: 40%;
+    /*mal zwei mach 80%, also 10% breiter als die 70% aus .container*/
+    position: relative;
+    left: -5%;
+    /*daher wieder -5%*/ }
+  .keep-text-left {
+    width: 80%; } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  body p {
+    margin-top: 2rem; }
+  main#home h1 {
+    margin-top: 1vh; }
+  .container {
+    padding: 2rem;
+    width: 80%;
+    margin: 0 auto; }
+  .menu-btn {
+    right: 15%; }
+  /*Functionier nicht richtig. Menü und .container alignen nicht*/
+  .menu-branding, .menu-nav {
+    width: 40%;
+    position: relative;
+    left: -2.5%; }
+  .keep-text-left {
+    width: 80%; } }
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.5; }
+    body p {
+      margin-top: 1rem; }
+  main#home h1 {
+    margin-top: 1vh; }
+  .container {
+    padding: 0 3rem; }
+  .menu-branding, .menu-nav {
+    width: 50%;
+    position: relative;
+    left: 0; }
+  .menu .portrait {
+    width: 50vh;
+    height: 50vh;
+    background-size: 50vh; }
+  .menu-nav .nav-link {
+    font-size: 1.5rem; }
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px; }
+  h1, h2, h3 {
+    margin: 0;
+    font-weight: normal; }
+    h1.lg-heading, h2.lg-heading, h3.lg-heading {
+      font-size: 3rem; }
+    h1.sm-heading, h2.sm-heading, h3.sm-heading {
+      margin-bottom: 1rem;
+      font-size: 1.5rem; } }
+
+@media screen and (max-width: 500px) {
+  body p {
+    margin-top: 1rem; }
+  .container {
+    width: 100%;
+    padding: 2rem; }
+  .menu .portrait {
+    width: 20vh;
+    height: 20vh;
+    background-size: 20vh; }
+  ul.menu-nav, div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.open, div.menu-branding.open {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 60vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-nav .nav-link {
+      font-size: 1.5rem;
+      padding: 0.7rem; }
+  .menu-branding {
+    height: 40vh;
+    transform: translate3d(-100%, 0, 0); } }
+
+/*END MEDIA QUERIES===============================*/

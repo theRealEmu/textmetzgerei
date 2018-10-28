@@ -1,0 +1,196 @@
+/*IMPORTSS===============================*/
+
+@import 'fonts';
+@import 'config';
+@import 'menu';
+
+/*END IMPORTSS===============================*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  //Instead of dark overlay (from mixins background)
+  @include background;
+  margin: 0;
+  color: $font-color;
+  font-family: $fontstack-textbody;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+//FONTS
+.pomp {
+    font-family: 'Pompiere', 'Calibri',  'Sergoe UI', cursive;
+}
+.cute {
+    font-family: 'Cute', 'Calibri',  'Sergoe UI', cursive;
+}
+.amatic {
+    font-family: 'Amatic SC', 'Calibri', 'Sergoe UI', sans-serif;
+    font-weight: normal;
+}
+.amaticbold {
+    font-family: 'AmaticSCBold', 'Calibri', 'Sergoe UI', sans-serif;
+    font-weight: normal;
+}
+.poiretone {
+  font-family: 'PioretOne';
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-family: $fontstack-heading;
+    font-weight: normal;
+
+    &.lg-heading {
+        font-size: 4rem;
+    }
+
+    &.sm-heading {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+a {
+    color: $font-color;
+    text-decoration: none;
+}
+
+
+header {
+    z-index: 2;
+}
+
+main {
+
+    min-height: 100vh;
+
+    .icons {
+        margin-top: 1rem;
+
+        a {
+            padding: 0.4rem;
+
+            &:hover{
+                color:$secondary-color;
+                @include easeOut;
+            }
+        }
+    }
+
+}
+
+/* Colors ###########*/
+.text-primary {
+    color: $primary-color;
+}
+.text-secondary {
+    color: $secondary-color;
+}
+.text-font {
+    color: $font-color;
+}
+.text-success {
+  color: $success-color;
+}
+.text-info {
+  color: $info-color;
+}
+
+/*alignments ###########*/
+.text-right {
+  text-align: right;
+}
+
+.contactbox {
+
+  width: 70%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid $primary-color;
+  border-radius: 8px;
+  background-color: $secondary-color;
+  
+
+}
+
+.stuffwedo {
+
+  padding: 0;
+
+
+  li {
+    text-decoration: none;
+    list-style-type: none;
+  }
+
+  i {
+    margin-right: 20px;
+  }
+
+}
+
+hr {
+  border-top: 2px dotted $secondary-color;
+  border-bottom: none;
+  display: block;
+  margin-left: 0; 
+}
+
+ul {
+  padding-left: 15px;
+  li {
+    margin-top: 1rem;
+  }
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mt-3 {
+  margin-top: 3rem;
+}
+
+//GRID
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+//END GRID
+
+//FOOTER
+.footer {
+  padding: 1rem 0rem;
+  font-size: 1.2rem;
+  color: darken($font-color, 10%);
+  letter-spacing: 3px;
+  bottom: 0px;
+  a{
+    color: darken($font-color, 10%);
+  }
+}
+.bg-dark {
+  background-color: #333;
+}
+
+
+
+/*MEDIA QUERIES===============================*/
+
+@import 'media';
+
+/*END MEDIA QUERIES===============================*/
+
